@@ -17,6 +17,12 @@ app.use(cookieParser());
 
 app.use(corsMiddleware);
 
+app.get("/health", (req, res) => {
+  res.status(200).json({
+    status: "OK",
+    message: "Taskboard API is running",
+  });
+});
 app.use(usersRouter);
 
 app.use(checkAuthToken);
