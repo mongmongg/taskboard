@@ -1,0 +1,1 @@
+import{p as e}from"./feature-bundle-092mmQWF.js";var t=e();function n({className:e}){let n=`border-0.5px border-[var(--border)] w-full ${e}`;return(0,t.jsx)(`hr`,{className:n})}export{n as t};
