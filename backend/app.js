@@ -34,7 +34,7 @@ app.use((error, req, res, next) => {
 // connectToMongoDB();
 
 connectToMongoDB().then(() => {
-  app.listen(PORT, () => {
+  app.listen(PORT, "0.0.0.0", () => {
     console.log("Server started");
   });
 });
