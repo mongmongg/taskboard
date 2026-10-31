@@ -8,6 +8,8 @@ import usersRouter from "./routes/users.route.js";
 import taskRouter from "./routes/tasks.route.js";
 import checkAuthToken from "./middlewares/check-auth.js";
 
+const PORT = process.env.PORT || 3000;
+
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -32,7 +34,7 @@ app.use((error, req, res, next) => {
 // connectToMongoDB();
 
 connectToMongoDB().then(() => {
-  app.listen(3000, () => {
+  app.listen(PORT, () => {
     console.log("Server started");
   });
 });
