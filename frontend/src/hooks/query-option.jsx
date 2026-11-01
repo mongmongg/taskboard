@@ -29,7 +29,7 @@ export const getCurrentBoardsQueryOptions = ({ uId, bId }) => {
 };
 export const getCurrentTaskQueryOptions = ({ uId, bId, tId }) => {
   return queryOptions({
-    queryKey: ["task", tId],
+    queryKey: BASE_KEY,
     queryFn: ({ signal }) => fetchData({ signal, uId, bId, tId }),
   });
 };

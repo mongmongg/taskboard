@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 export default function CardList({ children, className }) {
   const cssClass =
-    "flex justify-start items-start gap-x-1 gap-y-4 flex-wrap max-lg:grid max-lg:grid-cols-1 max-lg:gap-2  max-lg:p-4" +
+    "flex justify-start items-start gap-x-1 gap-y-4  max-lg:grid max-lg:grid-cols-1 max-lg:gap-2 max-lg:p-4" +
     className;
   return (
     <motion.ul

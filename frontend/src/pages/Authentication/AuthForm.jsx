@@ -1,10 +1,10 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useAuthUser, useSetAuth } from "../../hooks/useUserData.js";
+import { motion } from "motion/react";
 
 import Form from "../../components/Form/Form";
 import Input from "../../components/Form/Input";
 import Button from "../../components/UIcomponents/Button";
-import Line from "../../components/UIcomponents/Line";
 import FormError from "../../components/Form/FormError.jsx";
 
 export default function AuthForm({ mode }) {
@@ -14,13 +14,13 @@ export default function AuthForm({ mode }) {
   const {
     mutateAsync: authMutate,
     isPending,
+    isSuccess,
     isError,
     error: authError,
   } = useAuthUser({
     isLoginPage,
     onAuthSuccess: (userId) => setAuthorization(userId),
   });
-
   const navigate = useNavigate();
 
   async function handleSubmit(formData) {
@@ -29,7 +29,6 @@ export default function AuthForm({ mode }) {
       navigate(`/main`);
     } catch (error) {
       console.log(error);
-      // throw new Error("Something went wrong");
     }
   }
 
@@ -66,12 +65,18 @@ export default function AuthForm({ mode }) {
         minLength="8"
         placeholder="At least 8 characters"
       />
-      {isLoginPage && <a>Forget Password?</a>}
+      {/* {isLoginPage && <a>Forget Password?</a>} */}
       <div className="mx-0 my-2">
-        <Button type="submit" className="w-full" highlight disabled={isPending}>
-          {isLoginPage ? "Login" : "Create account"}
+        <Button
+          type="submit"
+          className={`w-full ${isPending ? "animate-bounce" : ""}`}
+          highlight
+          disabled={isPending || isSuccess}
+        >
+          {isPending && <span>...</span>}
+          {isPending && (isLoginPage ? "Loging in" : "Creating account")}
+          {!isPending && (isLoginPage ? "Login" : "Create account")}
         </Button>
-        
       </div>
 
       <p className="text-center">

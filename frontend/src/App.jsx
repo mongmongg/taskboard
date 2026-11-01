@@ -16,6 +16,7 @@ const UserSettings = lazy(() => import("./pages/(protected)/UserSettings"));
 const ErrorPage = lazy(() => import("./pages/ErrorPage"));
 const TaskModal = lazy(() => import("./pages/(protected)/TaskModal"));
 import TaskDetailsModal from "./pages/(protected)/TaskDetailsModal";
+import Loading from "./pages/Loading";
 
 const router = createBrowserRouter([
   {
@@ -64,7 +65,7 @@ export default function App() {
     <QueryClientProvider client={queryClient}>
       <AuthContextProvider>
         <ModalContextProvider>
-          <Suspense>
+          <Suspense fallback={<Loading />}>
             <RouterProvider router={router}></RouterProvider>
           </Suspense>
         </ModalContextProvider>

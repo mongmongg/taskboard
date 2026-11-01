@@ -12,6 +12,7 @@ export default function TaskModalForm({
   className,
   isEdit,
   isError,
+  isPending,
   error,
   onUpdate,
   onCancel,
@@ -56,6 +57,7 @@ export default function TaskModalForm({
       </Input>
       <ModalFormButton
         onCancel={onCancel}
+        isPending={isPending}
         actionBtnText={isEdit ? "Update" : "Create"}
       />
     </Form>

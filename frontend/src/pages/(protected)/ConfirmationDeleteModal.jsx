@@ -13,7 +13,7 @@ export default function ConfirmationDeleteModal() {
   const { mutate: deleteUserMutate } = useDeleteUser({
     path: `/auth?mode=signup`,
   });
-  const { mutate: deleteMutate } = useDeleteCurrentBoard({
+  const { mutate: deleteMutate, isPending } = useDeleteCurrentBoard({
     bId,
     tId,
     path: tId ? `/boards/${bId}` : "/main",
@@ -46,10 +46,20 @@ export default function ConfirmationDeleteModal() {
             </p>
           </div>
           <div className="flex justify-end gap-1">
-            <Button type="reset" className="shadow-lg" onClick={closeModal}>
+            <Button
+              type="reset"
+              className="shadow-lg"
+              onClick={closeModal}
+              disabled={isPending}
+            >
               Cancel
             </Button>
-            <Button type="submit" danger>
+            <Button
+              type="submit"
+              className={`${isPending ? "animate-bounce" : ""}`}
+              disabled={isPending}
+              danger
+            >
               Delete
             </Button>
           </div>

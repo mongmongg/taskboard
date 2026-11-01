@@ -10,7 +10,6 @@ import { lazy, useState } from "react";
 import { VscClose } from "react-icons/vsc";
 import Modal from "../../components/UIcomponents/Modal";
 import Button from "../../components/UIcomponents/Button";
-//import TaskModalForm from "../../components/Card/TaskModalForm";
 const TaskModalForm = lazy(() => import("../../components/Card/TaskModalForm"));
 
 export default function TaskDetailsModal() {
@@ -25,9 +24,10 @@ export default function TaskDetailsModal() {
   const {
     mutate: updateMutate,
     isError,
+    isPending,
     error,
     reset,
-  } = useCreateTaskMutation({ bId, tId, onSuccessCallback: handleCancel });
+  } = useCreateTaskMutation({ bId, tId, onSuccessCallback: handleCancelForm });
 
   function handleEdit() {
     setIsEdit(true);
@@ -82,6 +82,7 @@ export default function TaskDetailsModal() {
               className="px-0 py-4"
               isEdit={isEdit}
               isError={isError}
+              isPending={isPending}
               error={error}
               onUpdate={updateMutate}
               onCancel={handleCancelForm}

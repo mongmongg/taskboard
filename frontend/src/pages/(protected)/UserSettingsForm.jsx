@@ -8,6 +8,7 @@ export default function UserSettingsForm({ userData, onCancel }) {
   const {
     mutate: updateMutate,
     isError,
+    isPending,
     error,
   } = useUpdateUser({ onUpdateSuccess: onCancel });
   function handleSubmit(formData) {
@@ -44,7 +45,11 @@ export default function UserSettingsForm({ userData, onCancel }) {
         type="password"
         className="text-xs "
       ></Input>
-      <ModalFormButton actionBtnText="Update" onCancel={onCancel} />
+      <ModalFormButton
+        actionBtnText="Update"
+        isPending={isPending}
+        onCancel={onCancel}
+      />
     </Form>
   );
 }

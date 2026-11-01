@@ -13,7 +13,7 @@ export default function Loading() {
     },
   };
   return (
-    <article className="flex gap-4 justify-center items-center h-full">
+    <article className="absolute top-0 left-0 w-full h-full bg-black/40 flex gap-4 justify-center items-center">
       <motion.div
         animate="jump"
         transition={{ staggerChildren: -0.2, staggerDirection: -1 }}

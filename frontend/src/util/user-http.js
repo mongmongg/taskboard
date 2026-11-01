@@ -1,9 +1,9 @@
 import { handleResponse } from "./http";
 import { BASE_URL } from "./http";
-const TOKEN = localStorage.getItem("token");
+// const TOKEN = localStorage.getItem("token");
 const headers = {
   "Content-Type": "application/json",
-  Authorization: `Bearer ${TOKEN}`,
+  // Authorization: `Bearer ${TOKEN}`,
 };
 export async function verifyUser() {
   const url = `${BASE_URL}/user/verify`;

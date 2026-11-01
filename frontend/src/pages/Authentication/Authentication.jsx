@@ -1,5 +1,6 @@
 import { useSearchParams } from "react-router-dom";
 import logo from "/logo.webp";
+
 import AuthForm from "./AuthForm";
 //const AuthForm = lazy(() => import("./AuthForm"));
 

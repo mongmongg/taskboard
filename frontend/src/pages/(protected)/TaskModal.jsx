@@ -14,6 +14,7 @@ export default function TaskModal() {
 
   const {
     mutate: updateMutate,
+    isPending,
     isError,
     error,
     reset,
@@ -31,6 +32,7 @@ export default function TaskModal() {
         <TaskModalForm
           isEdit={isEdit}
           isError={isError}
+          isPending={isPending}
           error={error}
           onUpdate={updateMutate}
           onCancel={handleCancel}

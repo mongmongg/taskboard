@@ -27,7 +27,6 @@ export default function Board() {
   const { mutate: updateMutate, isPending } = useUpdateTaskDragMutation({
     bId,
   });
-  
   const tasks = data.board.task;
   const board = data.board;
 
@@ -46,8 +45,7 @@ export default function Board() {
       const taskId = source.id;
       const newStatus = target.type === "item" ? target.group : target.id;
       const data = { status: newStatus };
-      console.log(source.group, target.type, target.group, target.id);
-      if (dragStatus !== (target.type === "item" ? target.group : target.id)) {        
+      if (dragStatus !== (target.type === "item" ? target.group : target.id)) {
         updateMutate({ data, tId: taskId });
       }
     }
@@ -63,10 +61,10 @@ export default function Board() {
       onDelete={handleDeleteBoard}
     >
       <Outlet />
-      <section className="max-lg:mx-auto max-lg:w-[90%]">
+      <section className="scrollbar-thin scroll-smooth  overflow-x-auto pb-4 max-lg:mx-auto max-lg:w-[90%]">
         {(isLoading || isPending) && <Loading />}
         {!isLoading && !isPending && (
-          <CardList className="max-lg:grid-cols-1  ">
+          <CardList className=" max-lg:grid-cols-1  ">
             <DragDropProvider
               onDragEnd={handleDrag}
               onDragStart={handleDragStart}

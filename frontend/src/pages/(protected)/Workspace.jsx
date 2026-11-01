@@ -7,13 +7,14 @@ import CardList from "../../components/Card/CardList";
 import PageContent from "../../components/PageContent";
 import Button from "../../components/UIcomponents/Button";
 import heroImg from "/hero-2.png";
+import Loading from "../Loading";
 export default function Workspace() {
   const { showModal } = useModal();
-  const { data } = useCurrentBoards({});
+  const { data, isLoading } = useCurrentBoards({});
   const boardsData = data.boards;
-
   return (
     <PageContent title="Your workspace">
+      {isLoading && <Loading />}
       {/* No content to show */}
       {!boardsData ||
         (boardsData.length <= 0 && (

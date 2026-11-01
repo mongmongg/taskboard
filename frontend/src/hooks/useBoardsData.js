@@ -40,7 +40,7 @@ export function useCreateTaskMutation({
   taskStatus,
   onSuccessCallback,
 }) {
-  const { userId: uId, token } = useGetAuth();
+  const { userId: uId } = useGetAuth();
   return useMutation({
     ...createTasksMutationOptions({
       uId,

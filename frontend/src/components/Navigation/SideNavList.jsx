@@ -8,7 +8,6 @@ import { useCurrentBoards } from "../../hooks/useBoardsData";
 
 export default function SideNavList() {
   const { data: boardsData, isLoading } = useCurrentBoards({});
-  console.log(boardsData);
   const navVariants = {
     open: { transition: { delayChildren: stagger(0.05, { startDelay: 0.1 }) } },
     closed: { transition: { delayChildren: stagger(0.05, { from: "last" }) } },

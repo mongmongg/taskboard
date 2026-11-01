@@ -68,6 +68,7 @@ export default function CreateBoardModal() {
             />
             <ModalFormButton
               onCancel={closeModal}
+              isPending={isPending}
               actionBtnText={
                 modalState === "CREATE" ? "Create board" : "Update"
               }
