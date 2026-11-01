@@ -13,6 +13,15 @@ the cards are used to track individual tasks as they progress through the stages
 
 ---
 ## Demo
+<img width="448" height="264" alt="1" src="https://github.com/user-attachments/assets/dfac3ad1-c67c-4258-b32a-4d0215fc5bc0" />
+<img width="448" height="264" alt="2" src="https://github.com/user-attachments/assets/4cb1c848-a1fe-4163-a885-1e1175ede5ed" />
+<img width="448" height="264" alt="3" src="https://github.com/user-attachments/assets/32578d72-fb38-4f5f-9937-8f55468eec44" />
+<img width="448" height="264" alt="4" src="https://github.com/user-attachments/assets/9b8697d4-5a0c-4111-b6c8-8de7bbb96eaa" />
+<img width="448" height="264" alt="5" src="https://github.com/user-attachments/assets/7531233d-2e87-44dc-888d-789742a65d37" />
+<img width="448" height="264" alt="6" src="https://github.com/user-attachments/assets/707278cd-1355-4aee-b09c-a8e39a3b465d" />
+<img width="164" height="330" alt="responsive-1" src="https://github.com/user-attachments/assets/1452a055-5328-4410-a8b9-94cbce005953" />
+<img width="300" height="330" alt="responsive-2" src="https://github.com/user-attachments/assets/8faa3cb0-bb2f-4ea5-a5c8-f7808ef3d60c" />
+
 Link for the website **https://taskboard-anchitthab.netlify.app/**
 
 for testing can use 
@@ -36,7 +45,7 @@ Password: 12345678
 - Frontend: React, TailwindCSS
 - Backend: Node.js, Express.js
 - Database: MongoDB, Mongoose
-- Authentication: JWT, HttpOnly Cookies
+- Authentication: JWT, HttpOnly Cookies, bcrypts
 - API Requests: Fetch API
 - Deployment: Netlify (Frontend), Render (Backend)
 
@@ -122,7 +131,7 @@ taskboard/
   
 **Backend**
 - Build with Node.js + Express
-- Handles authentication and database read/write via Mongoose.
+- Handles authentication using JWT and bcrypts for hashing password and database read/write via Mongoose.
   
 **Database**
 - MongoDB + Mongoose stores and manage user accounts, boards and tasks data.
