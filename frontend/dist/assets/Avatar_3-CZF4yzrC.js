@@ -1,1 +1,0 @@
-var e=`/Avatar/Avatar_3.png`;export{e as t};

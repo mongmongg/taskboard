@@ -1,1 +1,0 @@
-import{p as e}from"./feature-bundle-092mmQWF.js";import{n as t}from"./index-pqoeK6gd.js";var n=e();function r({onCancel:e,actionBtnText:r}){return(0,n.jsxs)(`div`,{className:`flex justify-end mt-4 gap-2`,children:[(0,n.jsx)(t,{type:`reset`,onClick:e,children:`Cancel`}),(0,n.jsx)(t,{highlight:!0,type:`submit`,children:r})]})}export{r as t};
