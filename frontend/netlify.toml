@@ -1,9 +1,9 @@
 [[redirects]]
   from = "/api/*"
-  to = "https://taskboard-1dhr.onrender.com/api/:splat"
+  to = "https://taskboard-1dhr.onrender.com/:splat"
   status = 200
   force = true
-  
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
