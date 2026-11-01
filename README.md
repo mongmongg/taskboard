@@ -8,8 +8,7 @@
 ![Express Logo](https://img.shields.io/badge/Express-black?logo=express)
 ![MongoDB Logo](https://img.shields.io/badge/MongoDB-success?logo=mongodb&logoColor=white)
 
-Taskboard is a personal visualize and managment workflows tool. It features columns representing stages of a workflow process.
-the cards are used to track individual tasks as they progress through the stages.
+Taskboard is a Kanban-based task management application taht helps users visualize and managment their workflows. It features columns representing different stages of a workflow ,while task cards allow users to manage and track individual tasks as they progress through each stages.
 
 ---
 ## Demo
@@ -32,20 +31,20 @@ Password: 12345678
 
 ## Features
 
-- **Authentication** - Secure user login and registration by **JSON Web Tokens (JWT)**, hashed password before stored and stored authentications tokens in **HttpOnly cookies**.
+- **Authentication** - Secure user login and registration by **JSON Web Tokens (JWT)**, Password are hashed before stored in the database, and authentication tokens are stored in **HttpOnly cookies**.
 - **Database** - MongoDB for storing users and boards data.
 - **Frontend** - Responsive UI buit with JavaScript, React, and TailwindCSS.
-- **Backend API** - Node.js + Express handles authentication, and data management.
+- **Backend** - Node.js + Express handles authentication, and data management.
 
 ---
 
 ## Tech Stack
 
 - Language: JavaScript
-- Frontend: React, TailwindCSS
+- Frontend: React, Vite, Tailwind CSS
 - Backend: Node.js, Express.js
 - Database: MongoDB, Mongoose
-- Authentication: JWT, HttpOnly Cookies, bcrypts
+- Authentication: JWT, HttpOnly Cookies, bcrypt
 - API Requests: Fetch API
 - Deployment: Netlify (Frontend), Render (Backend)
 
@@ -58,24 +57,23 @@ Password: 12345678
 - Node.js
 - MongoDB: Local installation or MongoDB Atlas account
 
-### Installations
+### Installation
 
-**Clone the repository**
 ```text
+#Clone the repository
 git clone https://github.com/mongmongg/taskboard.git
-```
-**Install Dependencies**
 
-Backend:
-```text
-cd backend && npm install
+#Install backend dependencies
+cd taskboard/backend
+npm install
+
+#Install frontend dependencies
+cd ../frontend 
+npm install
 ```
-Frontend: 
-```text
-cd frontend && npm install
-```
+
+
 **Update .env with your configuration**
-
 - Database URL
 
 **Development**
@@ -97,12 +95,12 @@ taskboard/
 │   ├── public/
 │   ├── src/
 │   │   ├── assets/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── hooks/
+│   │   ├── components/ Reuseable React components
+│   │   ├── pages/      Page-level components
+│   │   ├── hooks/      Custom hooks
 │   │   ├── services/
-│   │   ├── context/
-│   │   ├── utils/
+│   │   ├── context/    Shared application state
+│   │   ├── utils/      fetch API logic
 │   │   ├── App.jsx
 │   │   └── main.jsx
 │   ├── .env
@@ -110,12 +108,12 @@ taskboard/
 │   └── vite.config.js
 │
 ├── backend/
-│   ├── controllers/
-│   ├── data/
-│   ├── middlewares/
-│   ├── models/
-│   ├── routes/
-│   ├── .env
+│   ├── controllers/    Handles application request logic
+│   ├── data/           Database connection function
+│   ├── middlewares/    Handles middleware for example CORS and check authentication
+│   ├── models/         Defines database schemas and custom error function
+│   ├── routes/         Defines API endpoints
+│   ├── .env  
 │   ├── package.json
 │   └── server.js
 │
@@ -130,7 +128,7 @@ taskboard/
 - Connects to backend API for authentication and data retrieval and management.
   
 **Backend**
-- Build with Node.js + Express
+- Built with Node.js + Express
 - Handles authentication using JWT and bcrypts for hashing password and database read/write via Mongoose.
   
 **Database**
@@ -143,7 +141,10 @@ taskboard/
 |-----------|---------|--------------|
 | /user/verify|GET| Verify user token|
 |/login|POST| Log in user|
-|/signup|POST|Regiter new user|
+|/signup|POST|Regiter a new user|
+|/:uId|GET|Retrieve user data by user ID|
+|/:uId/settings|PATCH|Edit user data|
+|/:uId/settings/delete|DELETE|Delete user account|
 
 
 **Boards Routes**
@@ -155,6 +156,7 @@ taskboard/
 |Endpoint|Method|Description|
 |-----------|---------|--------------|
 |/:uId/boards/:bId/task/:tId|GET|Retrieve a specific task by its ID|
+|/:uId/boards/:bId/task/:status|POST|Create new task|
 
 **Environment Variables**
 |Variables|Description|
