@@ -13,7 +13,7 @@ the cards are used to track individual tasks as they progress through the stages
 
 ---
 ## Demo
-Link for the website **[taskboard](taskboard-anchitthab.netlify.app)**
+Link for the website **https://taskboard-anchitthab.netlify.app/**
 
 for testing can use 
 ```text
