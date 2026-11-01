@@ -33,7 +33,7 @@ export default function ConfirmationDeleteModal() {
       open={modalState === "CONFIRM" || isDeleteUser}
       onClose={closeModal}
     >
-      <article className="bg-[var(--primary-500)] w-100 rounded-[20px] shadow-lg m-auto py-6">
+      <article className="bg-[var(--primary-500)] w-100 rounded-[20px] shadow-lg m-auto py-6 max-md:w-80">
         <Form onSubmit={handleConfirm} className="px-8">
           <div className="flex flex-col gap-4">
             <h2 className="text-xl">
